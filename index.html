@@ -346,6 +346,34 @@
                 >Food</a>
               </li>
             </ul>
+            <div class="row g-2 align-items-end mb-3" id="menu-controls">
+              <div class="col-md-4">
+                <label for="menu-search" class="form-label">Search</label>
+                <input type="text" id="menu-search" class="form-control" placeholder="Search menu..." />
+              </div>
+              <div class="col-md-2">
+                <label for="price-min" class="form-label">Min Price</label>
+                <input type="number" id="price-min" class="form-control" min="0" step="1" />
+              </div>
+              <div class="col-md-2">
+                <label for="price-max" class="form-label">Max Price</label>
+                <input type="number" id="price-max" class="form-control" min="0" step="1" />
+              </div>
+              <div class="col-md-3">
+                <label for="menu-sort" class="form-label">Sort by</label>
+                <select id="menu-sort" class="form-select">
+                  <option value="">Default</option>
+                  <option value="name-asc">Name A-Z</option>
+                  <option value="name-desc">Name Z-A</option>
+                  <option value="price-asc">Price Low-High</option>
+                  <option value="price-desc">Price High-Low</option>
+                </select>
+              </div>
+              <div class="col-md-1">
+                <label class="form-label d-none d-md-block">&nbsp;</label>
+                <button id="menu-reset" class="btn btn-outline-light w-100">Reset</button>
+              </div>
+            </div>
             <div class="tab-content" id="ex2-content">
               <div
                 class="tab-pane fade show active"
@@ -354,32 +382,7 @@
                 aria-labelledby="ex2-tab-1"
               >
                 <div class="container my-5 menu-section">
-                  <div class="row">
-                      <div class="col-lg-6">
-                          <div class="menu-item"><h5>Iced Coffee</h5><span>60 EGP</span></div>
-                          <div class="menu-item"><h5>Iced Caramel Macchiato</h5><span>75 EGP</span></div>
-                          <div class="menu-item"><h5>Iced Americano</h5><span>55 EGP</span></div>
-                          <div class="menu-item"><h5>Iced Latte</h5><span>65 EGP</span></div>
-                          <div class="menu-item"><h5>Lemon Mint</h5><span>55 EGP</span></div>
-                          <div class="menu-item"><h5>Strawberry Smoothie</h5><span>70 EGP</span></div>
-                          <div class="menu-item"><h5>Mango Smoothie</h5><span>70 EGP</span></div>
-                          <div class="menu-item"><h5>Oreo Shake</h5><span>80 EGP</span></div>
-                          <div class="menu-item"><h5>Vanilla Milkshake</h5><span>75 EGP</span></div>
-                          <div class="menu-item"><h5>Chocolate Milkshake</h5><span>75 EGP</span></div>
-                      </div>
-                      <div class="col-lg-6">
-                          <div class="menu-item"><h5>Fresh Orange Juice</h5><span>60 EGP</span></div>
-                          <div class="menu-item"><h5>Fresh Pomegranate Juice</h5><span>70 EGP</span></div>
-                          <div class="menu-item"><h5>Coca-Cola</h5><span>25 EGP</span></div>
-                          <div class="menu-item"><h5>Sprite</h5><span>25 EGP</span></div>
-                          <div class="menu-item"><h5>Iced Tea - Peach</h5><span>50 EGP</span></div>
-                          <div class="menu-item"><h5>Iced Tea - Lemon</h5><span>50 EGP</span></div>
-                          <div class="menu-item"><h5>San Pellegrino</h5><span>45 EGP</span></div>
-                          <div class="menu-item"><h5>Red Bull</h5><span>60 EGP</span></div>
-                          <div class="menu-item"><h5>Club Soda</h5><span>20 EGP</span></div>
-                          <div class="menu-item"><h5>Water</h5><span>15 EGP</span></div>
-                      </div>
-                  </div>
+                  <div class="row" id="cold-drinks-container"></div>
                 </div>
               </div>
               
@@ -390,32 +393,7 @@
                 aria-labelledby="ex2-tab-2"
               >
                 <div class="container my-5 menu-section">
-                  <div class="row">
-                      <div class="col-lg-6">
-                          <div class="menu-item"><h5>Espresso</h5><span>40 EGP</span></div>
-                          <div class="menu-item"><h5>Double Espresso</h5><span>50 EGP</span></div>
-                          <div class="menu-item"><h5>Americano</h5><span>50 EGP</span></div>
-                          <div class="menu-item"><h5>Cappuccino</h5><span>55 EGP</span></div>
-                          <div class="menu-item"><h5>Latte</h5><span>60 EGP</span></div>
-                          <div class="menu-item"><h5>Caramel Macchiato</h5><span>70 EGP</span></div>
-                          <div class="menu-item"><h5>Flat White</h5><span>60 EGP</span></div>
-                          <div class="menu-item"><h5>Mocha</h5><span>65 EGP</span></div>
-                          <div class="menu-item"><h5>Turkish Coffee</h5><span>45 EGP</span></div>
-                          <div class="menu-item"><h5>Hot Chocolate</h5><span>65 EGP</span></div>
-                      </div>
-                      <div class="col-lg-6">
-                          <div class="menu-item"><h5>French Press</h5><span>55 EGP</span></div>
-                          <div class="menu-item"><h5>Drip Coffee</h5><span>50 EGP</span></div>
-                          <div class="menu-item"><h5>Green Tea</h5><span>35 EGP</span></div>
-                          <div class="menu-item"><h5>Black Tea</h5><span>30 EGP</span></div>
-                          <div class="menu-item"><h5>Peppermint Tea</h5><span>35 EGP</span></div>
-                          <div class="menu-item"><h5>Chamomile Tea</h5><span>35 EGP</span></div>
-                          <div class="menu-item"><h5>Ginger Tea with Honey</h5><span>40 EGP</span></div>
-                          <div class="menu-item"><h5>Sahlab</h5><span>60 EGP</span></div>
-                          <div class="menu-item"><h5>Cinnamon Drink</h5><span>50 EGP</span></div>
-                          <div class="menu-item"><h5>Hot Lemon with Honey</h5><span>45 EGP</span></div>
-                      </div>
-                  </div>
+                  <div class="row" id="hot-drinks-container"></div>
                 </div>
               </div>
 
@@ -426,32 +404,7 @@
                 aria-labelledby="ex2-tab-3"
               >
                 <div class="container my-5 menu-section">
-                  <div class="row">
-                      <div class="col-lg-6">
-                          <div class="menu-item"><h5>Chicken Sandwich</h5><span>110 EGP</span></div>
-                          <div class="menu-item"><h5>Beef Burger</h5><span>130 EGP</span></div>
-                          <div class="menu-item"><h5>Vegetarian Sandwich</h5><span>95 EGP</span></div>
-                          <div class="menu-item"><h5>Smoked Turkey & Cheese Croissant</h5><span>85 EGP</span></div>
-                          <div class="menu-item"><h5>Tuna Sandwich</h5><span>90 EGP</span></div>
-                          <div class="menu-item"><h5>Club Sandwich</h5><span>120 EGP</span></div>
-                          <div class="menu-item"><h5>French Fries</h5><span>45 EGP</span></div>
-                          <div class="menu-item"><h5>Onion Rings</h5><span>50 EGP</span></div>
-                          <div class="menu-item"><h5>Chocolate Cake</h5><span>85 EGP</span></div>
-                          <div class="menu-item"><h5>Red Velvet Cake</h5><span>90 EGP</span></div>
-                      </div>
-                      <div class="col-lg-6">
-                          <div class="menu-item"><h5>Cheesecake</h5><span>95 EGP</span></div>
-                          <div class="menu-item"><h5>Molten Cake</h5><span>100 EGP</span></div>
-                          <div class="menu-item"><h5>Waffle with Nutella</h5><span>75 EGP</span></div>
-                          <div class="menu-item"><h5>Pancakes with Maple Syrup</h5><span>70 EGP</span></div>
-                          <div class="menu-item"><h5>Fruit Salad</h5><span>65 EGP</span></div>
-                          <div class="menu-item"><h5>Caesar Salad</h5><span>80 EGP</span></div>
-                          <div class="menu-item"><h5>Chicken Caesar Salad</h5><span>110 EGP</span></div>
-                          <div class="menu-item"><h5>Mushroom Soup</h5><span>60 EGP</span></div>
-                          <div class="menu-item"><h5>Pasta with White Sauce</h5><span>105 EGP</span></div>
-                          <div class="menu-item"><h5>Nachos with Cheese</h5><span>80 EGP</span></div>
-                      </div>
-                  </div>
+                  <div class="row" id="food-container"></div>
                 </div>
               </div>
             </div>
@@ -644,16 +597,7 @@
       <p>© 2025 Cafe 8AM. All rights reserved.</p>
     </footer>
     <script type="text/javascript" src="js/mdb.umd.min.js"></script>
-    <script type="text/javascript">
-      // Navbar scroll effect
-      window.addEventListener('scroll', function() {
-        var navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      });
-    </script>
+    <script type="text/javascript" src="js/site.js"></script>
+    <script type="text/javascript" src="js/cafe.js"></script>
   </body>
 </html>
