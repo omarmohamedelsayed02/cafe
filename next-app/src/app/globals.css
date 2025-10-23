@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --dark-bg: #121212;
+  --dark-secondary: #1e1e1e;
+  --gold-accent: #D4AF37;
+  --light-text: #f5f5f5;
+}
+
+@theme inline {
+  --color-background: var(--dark-bg);
+  --color-foreground: var(--light-text);
+  --font-sans: var(--font-roboto);
+  --font-serif: var(--font-playfair);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark-bg);
+  color: var(--light-text);
+  font-family: var(--font-roboto), system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Utility classes mirroring legacy styles */
+.menu-section { background-color: var(--dark-secondary); color: var(--light-text); }
+.menu-item { @apply flex justify-between items-center py-3 border-b border-dashed; border-color: var(--gold-accent); }
+.menu-item:last-child { border-bottom: none; }
+.menu-item h5 { margin: 0; font-weight: 500; color: var(--light-text); }
+.menu-item span { font-weight: 700; color: var(--gold-accent); }
+
+.navbar-transparent { background-color: rgba(0,0,0,0.4); transition: background-color .3s ease-in-out; }
+.navbar.scrolled { background-color: rgba(0,0,0,0.9); }
+.navbar-brand-strong { color: var(--gold-accent); }
+
+.btn-primary { background-color: var(--gold-accent); border-color: var(--gold-accent); }
+.btn-primary:hover { background-color: #c09e2e; border-color: #c09e2e; }
+.btn-outline-light { color: var(--gold-accent); border-color: var(--gold-accent); }
+.btn-outline-light:hover { background-color: var(--gold-accent); color: var(--dark-bg); }
+
+.card-dark { background-color: var(--dark-secondary); color: var(--light-text); }
+.card-title-gold { color: var(--gold-accent); }
+
+.nav-tabs { border-bottom: 1px solid rgba(255,255,255,0.1); }
+.nav-link { color: var(--light-text); border: 1px solid transparent; }
+.nav-link.active { color: var(--gold-accent); background-color: var(--dark-secondary); border-color: var(--gold-accent) var(--gold-accent) var(--dark-secondary); }
+.nav-link:hover { border-color: var(--gold-accent) var(--gold-accent) transparent; }
+
+.gallery-item-container { width: 100%; height: 250px; overflow: hidden; border-radius: .25rem; }
+.gallery-item-container img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease-in-out; }
+.gallery-item-container:hover img { transform: scale(1.05); }
